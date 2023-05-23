@@ -54,6 +54,8 @@
 		34643AAD2872933600F142BE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34643AAC2872933600F142BE /* LoginViewController.m */; };
 		34831A54277997F3004BFC4D /* privacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34831A53277997F3004BFC4D /* privacyPolicy.txt */; };
 		34A62ACA2A1C8CAF009BDF8B /* LaunchScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AC92A1C8CAF009BDF8B /* LaunchScreenVC.m */; };
+		34A62AD12A1C9CEB009BDF8B /* MPUserDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AD02A1C9CEB009BDF8B /* MPUserDefaultManager.m */; };
+		34A62AD82A1C9E8A009BDF8B /* MPFileStoreManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AD72A1C9E8A009BDF8B /* MPFileStoreManger.m */; };
 		34EFA7DA26E6FB6C00FC7698 /* YZAuthID.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */; };
 		34EFA95B26E88E9B00FC7698 /* CustomProvisionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA95A26E88E9B00FC7698 /* CustomProvisionsVC.m */; };
 		34EFA96526E89F2400FC7698 /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA96426E89F2400FC7698 /* CustomDatePickerView.m */; };
@@ -295,6 +297,12 @@
 		34A62AC62A1C645D009BDF8B /* MyPetDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MyPetDebug.entitlements; sourceTree = "<group>"; };
 		34A62AC82A1C8CAF009BDF8B /* LaunchScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchScreenVC.h; sourceTree = "<group>"; };
 		34A62AC92A1C8CAF009BDF8B /* LaunchScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenVC.m; sourceTree = "<group>"; };
+		34A62ACF2A1C9CEB009BDF8B /* MPUserDefaultManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPUserDefaultManager.h; sourceTree = "<group>"; };
+		34A62AD02A1C9CEB009BDF8B /* MPUserDefaultManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPUserDefaultManager.m; sourceTree = "<group>"; };
+		34A62AD22A1C9D05009BDF8B /* MPUserDefaultManagerKeyValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPUserDefaultManagerKeyValue.h; sourceTree = "<group>"; };
+		34A62AD62A1C9E8A009BDF8B /* MPFileStoreManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFileStoreManger.h; sourceTree = "<group>"; };
+		34A62AD72A1C9E8A009BDF8B /* MPFileStoreManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPFileStoreManger.m; sourceTree = "<group>"; };
+		34A62AD92A1C9EC2009BDF8B /* MPFileStoreMangerFileName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFileStoreMangerFileName.h; sourceTree = "<group>"; };
 		34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZAuthID.m; sourceTree = "<group>"; };
 		34EFA7D926E6FB6C00FC7698 /* YZAuthID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZAuthID.h; sourceTree = "<group>"; };
 		34EFA95926E88E9B00FC7698 /* CustomProvisionsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomProvisionsVC.h; sourceTree = "<group>"; };
@@ -893,6 +901,35 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		34A62ACB2A1C9B01009BDF8B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				34A62AD52A1C9E45009BDF8B /* MPFileStore */,
+				34A62AD42A1C9E36009BDF8B /* MPUserDefaultManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		34A62AD42A1C9E36009BDF8B /* MPUserDefaultManager */ = {
+			isa = PBXGroup;
+			children = (
+				34A62ACF2A1C9CEB009BDF8B /* MPUserDefaultManager.h */,
+				34A62AD02A1C9CEB009BDF8B /* MPUserDefaultManager.m */,
+				34A62AD22A1C9D05009BDF8B /* MPUserDefaultManagerKeyValue.h */,
+			);
+			path = MPUserDefaultManager;
+			sourceTree = "<group>";
+		};
+		34A62AD52A1C9E45009BDF8B /* MPFileStore */ = {
+			isa = PBXGroup;
+			children = (
+				34A62AD62A1C9E8A009BDF8B /* MPFileStoreManger.h */,
+				34A62AD72A1C9E8A009BDF8B /* MPFileStoreManger.m */,
+				34A62AD92A1C9EC2009BDF8B /* MPFileStoreMangerFileName.h */,
+			);
+			path = MPFileStore;
+			sourceTree = "<group>";
+		};
 		34EFA7D726E6FB6C00FC7698 /* YZAuthID */ = {
 			isa = PBXGroup;
 			children = (
@@ -1310,6 +1347,7 @@
 		3C95D9D52290483500D1E11D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				34A62ACB2A1C9B01009BDF8B /* Manager */,
 				34A62AC72A1C8C8F009BDF8B /* LaunchScreen */,
 				34231CF12886FB700047C794 /* Mine */,
 				34231CF02886FB550047C794 /* Earnings */,
@@ -1682,8 +1720,9 @@
 		3C95D9922290462300D1E11D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MP;
 				LastUpgradeCheck = 1240;
-				ORGANIZATIONNAME = "柯里君";
+				ORGANIZATIONNAME = "王健龙";
 				TargetAttributes = {
 					3C95D9992290462300D1E11D = {
 						CreatedOnToolsVersion = 10.1;
@@ -1855,6 +1894,7 @@
 				34231D1F288792FC0047C794 /* SearchDataModel.m in Sources */,
 				3C2BFB0122A6ECCD00515DE5 /* UILabel+ForLMJVerticalScrollText.m in Sources */,
 				3C6DB125243ED07E00B2C2D7 /* WKMessageHandlerDispatch.m in Sources */,
+				34A62AD82A1C9E8A009BDF8B /* MPFileStoreManger.m in Sources */,
 				3C6DB12E243ED07E00B2C2D7 /* JXBWebViewController.m in Sources */,
 				34EFA7DA26E6FB6C00FC7698 /* YZAuthID.m in Sources */,
 				3C6DB122243ED07E00B2C2D7 /* JXBWKCustomProtocol.m in Sources */,
@@ -1898,6 +1938,7 @@
 				3C6DB12C243ED07E00B2C2D7 /* WKAppManager.m in Sources */,
 				3C6DB129243ED07E00B2C2D7 /* WKWebView+ClearWebCache.m in Sources */,
 				3CE4251D22FDB3890079C94D /* KLTIMManager.m in Sources */,
+				34A62AD12A1C9CEB009BDF8B /* MPUserDefaultManager.m in Sources */,
 				341EF19827B53EC800A0F069 /* TZImagePickerController.m in Sources */,
 				34231D20288792FC0047C794 /* SearchKeyModel.m in Sources */,
 				3C2BFB0022A6ECCD00515DE5 /* LMJVerticalScrollText.m in Sources */,
