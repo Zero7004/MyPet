@@ -29,15 +29,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [NSThread sleepForTimeInterval:2.0];
+
     //Bugly
-    BuglyConfig * config = [[BuglyConfig alloc] init];
-    // 设置自定义日志上报的级别，默认不上报自定义日志
-    config.reportLogLevel = BuglyLogLevelWarn;
-    config.unexpectedTerminatingDetectionEnable = YES;
-    config.debugMode = YES;
-    config.channel = @"iOS";
-    
-    [Bugly startWithAppId:@"f01a4fa234" config:config];
+//    BuglyConfig * config = [[BuglyConfig alloc] init];
+//    // 设置自定义日志上报的级别，默认不上报自定义日志
+//    config.reportLogLevel = BuglyLogLevelWarn;
+//    config.unexpectedTerminatingDetectionEnable = YES;
+//    config.debugMode = YES;
+//    config.channel = @"iOS";
+//
+//    [Bugly startWithAppId:@"f01a4fa234" config:config];
     
     //根控制器
     [self setUpRootViewController];
