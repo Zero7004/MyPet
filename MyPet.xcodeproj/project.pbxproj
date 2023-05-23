@@ -173,6 +173,7 @@
 		FD7C05E326C978930059344E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7C05E226C978930059344E /* WebKit.framework */; };
 		FD7F824526C1637E008C1A52 /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7F824426C1637E008C1A52 /* CustomPickerView.m */; };
 		FD7F824826C16395008C1A52 /* CustomPickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7F824726C16395008C1A52 /* CustomPickerViewModel.m */; };
+		FDB84FC42A1D1B3400B52006 /* MPMyPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB84FC32A1D1B3400B52006 /* MPMyPetViewController.m */; };
 		FDECF0FB26AF0E2600DD67B2 /* TYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECF0F726AF0E2500DD67B2 /* TYPageControl.m */; };
 		FDECF0FC26AF0E2600DD67B2 /* TYCyclePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECF0F826AF0E2500DD67B2 /* TYCyclePagerView.m */; };
 		FDECF0FD26AF0E2600DD67B2 /* TYCyclePagerTransformLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECF0F926AF0E2600DD67B2 /* TYCyclePagerTransformLayout.m */; };
@@ -531,6 +532,8 @@
 		FD7F824426C1637E008C1A52 /* CustomPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPickerView.m; sourceTree = "<group>"; };
 		FD7F824626C16395008C1A52 /* CustomPickerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPickerViewModel.h; sourceTree = "<group>"; };
 		FD7F824726C16395008C1A52 /* CustomPickerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPickerViewModel.m; sourceTree = "<group>"; };
+		FDB84FC22A1D1B3400B52006 /* MPMyPetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMyPetViewController.h; sourceTree = "<group>"; };
+		FDB84FC32A1D1B3400B52006 /* MPMyPetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMyPetViewController.m; sourceTree = "<group>"; };
 		FDECF0F526AF0E2500DD67B2 /* TYCyclePagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerView.h; sourceTree = "<group>"; };
 		FDECF0F626AF0E2500DD67B2 /* TYCyclePagerTransformLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerTransformLayout.h; sourceTree = "<group>"; };
 		FDECF0F726AF0E2500DD67B2 /* TYPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPageControl.m; sourceTree = "<group>"; };
@@ -752,6 +755,8 @@
 				34231CFF2886FFD00047C794 /* HomeViewController.m */,
 				34A62ADA2A1C9FAF009BDF8B /* MPGetPetViewController.h */,
 				34A62ADB2A1C9FAF009BDF8B /* MPGetPetViewController.m */,
+				FDB84FC22A1D1B3400B52006 /* MPMyPetViewController.h */,
+				FDB84FC32A1D1B3400B52006 /* MPMyPetViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1938,6 +1943,7 @@
 				FDFB116926B4DFA300CB6ADB /* FMRecordProgressView.m in Sources */,
 				3C5CEE27229AF2B70078CE16 /* UIImage+Gradient.m in Sources */,
 				FDECF10D26AF0E9F00DD67B2 /* UIViewController+WMPageController.m in Sources */,
+				FDB84FC42A1D1B3400B52006 /* MPMyPetViewController.m in Sources */,
 				341EF19327B53EC800A0F069 /* TZProgressView.m in Sources */,
 				34231D542888F60F0047C794 /* SelectLabelItemView.m in Sources */,
 				3C6DB12C243ED07E00B2C2D7 /* WKAppManager.m in Sources */,
@@ -2172,12 +2178,10 @@
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = MyPet/MyPetDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = P26J6XCT3X;
+				DEVELOPMENT_TEAM = QR9PMC2TCQ;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2225,7 +2229,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjlfjl.MyPet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = WildcardAppID;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64e armv7 armv7s armv6 armv8 x86_64 arm64 ";
 			};

@@ -18,6 +18,7 @@
 #import <Bugly/Bugly.h>
 #import "YZAuthID.h"
 #import "HomeViewController.h"
+#import "MPGetPetViewController.h"
 
 @interface AppDelegate ()<CycleImageViewDelegate>
 
@@ -29,7 +30,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [NSThread sleepForTimeInterval:2.0];
+//    [NSThread sleepForTimeInterval:2.0];
 
     //Bugly
 //    BuglyConfig * config = [[BuglyConfig alloc] init];
@@ -61,7 +62,7 @@
 - (void)setUpRootViewController {
     [self setWindow:[[UIWindow alloc] initWithFrame:SCREEN_RECT]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
-    [self.window setRootViewController:[[HomeViewController alloc] init]];
+    [self.window setRootViewController:[[MPGetPetViewController alloc] init]];
     [self.window makeKeyAndVisible];
     
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
