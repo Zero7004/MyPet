@@ -81,7 +81,7 @@
         @weakify(self)
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            MPMyPetViewController *vc = [MPMyPetViewController new];
+            MPMyPetViewController *vc = [[MPMyPetViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }];
         

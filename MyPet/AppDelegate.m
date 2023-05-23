@@ -19,6 +19,7 @@
 #import "YZAuthID.h"
 #import "HomeViewController.h"
 #import "MPGetPetViewController.h"
+#import "BaseNavigationController.h"
 
 @interface AppDelegate ()<CycleImageViewDelegate>
 
@@ -62,7 +63,9 @@
 - (void)setUpRootViewController {
     [self setWindow:[[UIWindow alloc] initWithFrame:SCREEN_RECT]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
-    [self.window setRootViewController:[[MPGetPetViewController alloc] init]];
+    
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:[[MPGetPetViewController alloc] init]];
+    [self.window setRootViewController:nav];
     [self.window makeKeyAndVisible];
     
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
