@@ -56,6 +56,7 @@
 		34A62ACA2A1C8CAF009BDF8B /* LaunchScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AC92A1C8CAF009BDF8B /* LaunchScreenVC.m */; };
 		34A62AD12A1C9CEB009BDF8B /* MPUserDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AD02A1C9CEB009BDF8B /* MPUserDefaultManager.m */; };
 		34A62AD82A1C9E8A009BDF8B /* MPFileStoreManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AD72A1C9E8A009BDF8B /* MPFileStoreManger.m */; };
+		34A62ADC2A1C9FAF009BDF8B /* MPGetPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62ADB2A1C9FAF009BDF8B /* MPGetPetViewController.m */; };
 		34EFA7DA26E6FB6C00FC7698 /* YZAuthID.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */; };
 		34EFA95B26E88E9B00FC7698 /* CustomProvisionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA95A26E88E9B00FC7698 /* CustomProvisionsVC.m */; };
 		34EFA96526E89F2400FC7698 /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA96426E89F2400FC7698 /* CustomDatePickerView.m */; };
@@ -303,6 +304,8 @@
 		34A62AD62A1C9E8A009BDF8B /* MPFileStoreManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFileStoreManger.h; sourceTree = "<group>"; };
 		34A62AD72A1C9E8A009BDF8B /* MPFileStoreManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPFileStoreManger.m; sourceTree = "<group>"; };
 		34A62AD92A1C9EC2009BDF8B /* MPFileStoreMangerFileName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFileStoreMangerFileName.h; sourceTree = "<group>"; };
+		34A62ADA2A1C9FAF009BDF8B /* MPGetPetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPGetPetViewController.h; sourceTree = "<group>"; };
+		34A62ADB2A1C9FAF009BDF8B /* MPGetPetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPGetPetViewController.m; sourceTree = "<group>"; };
 		34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZAuthID.m; sourceTree = "<group>"; };
 		34EFA7D926E6FB6C00FC7698 /* YZAuthID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZAuthID.h; sourceTree = "<group>"; };
 		34EFA95926E88E9B00FC7698 /* CustomProvisionsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomProvisionsVC.h; sourceTree = "<group>"; };
@@ -747,6 +750,8 @@
 			children = (
 				34231CFE2886FFD00047C794 /* HomeViewController.h */,
 				34231CFF2886FFD00047C794 /* HomeViewController.m */,
+				34A62ADA2A1C9FAF009BDF8B /* MPGetPetViewController.h */,
+				34A62ADB2A1C9FAF009BDF8B /* MPGetPetViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1955,6 +1960,7 @@
 				FD69F36926ABB30D0056BE18 /* CustomTextView.m in Sources */,
 				3C2BFB0D22A6F1F600515DE5 /* CycleImageViewCell.m in Sources */,
 				3C5CEE40229C23640078CE16 /* MLAlertView.m in Sources */,
+				34A62ADC2A1C9FAF009BDF8B /* MPGetPetViewController.m in Sources */,
 				34231D452888EC550047C794 /* SelectLabelDM.m in Sources */,
 				3C2BFAFF22A6ECCD00515DE5 /* UIView+ForLMJVerticalScrollText.m in Sources */,
 				341EF19127B53EC800A0F069 /* TZPhotoPreviewController.m in Sources */,
