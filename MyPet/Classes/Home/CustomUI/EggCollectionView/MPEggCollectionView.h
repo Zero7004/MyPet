@@ -10,9 +10,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol MPEggCollectionViewDelegate <NSObject>
+
+- (void)getCurrenSectionIndex:(NSInteger)index;
+
+@end
+
 @interface MPEggCollectionView : BaseView
 
+@property (nonatomic, weak) id<MPEggCollectionViewDelegate> delegate;
+
+@property (nonatomic, assign) NSInteger lastPage;
+
 - (instancetype)initWithItemSize:(CGSize)itemSize;
+
+- (void)clickLeft;
+- (void)clickRight;
 
 @end
 

@@ -11,7 +11,7 @@
 #import "MPEggCollectionView.h"
 #import "UIButton+LXMImagePosition.h"
 
-@interface MPMyPetViewController ()
+@interface MPMyPetViewController ()<MPEggCollectionViewDelegate>
 
 @property (nonatomic, strong) UIImageView *topBG;
 @property (nonatomic, strong) UIView *bottomView;
@@ -60,8 +60,8 @@
     
     self.petCollectionView = ({
         MPEggCollectionView *view = [[MPEggCollectionView alloc] initWithItemSize:CGSizeMake(180, 119)];
-//        view.backgroundColor = UIColor.redColor;
-        [self.topBG addSubview:view];
+        view.delegate = self;
+        [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view.mas_centerX).offset(0);
             make.width.offset(180);
@@ -75,35 +75,37 @@
     self.leftBtn = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:[UIImage imageNamed:@"icon_left"] forState:UIControlStateNormal];
-        [self.topBG addSubview:btn];
+        btn.hidden = self.petCollectionView.lastPage == 0;
+        [self.view addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.petCollectionView.mas_centerY).offset(0);
-            make.left.offset(12);
+            make.left.mas_equalTo(12);
             make.width.height.offset(34);
         }];
         @weakify(self)
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
+            [self.petCollectionView clickLeft];
         }];
 
-        
         btn;
     });
     
     self.rightBtn = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:[UIImage imageNamed:@"icon_right"] forState:UIControlStateNormal];
-        [self.topBG addSubview:btn];
+        btn.hidden = self.petCollectionView.lastPage == 8 - 1;
+        [self.view addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.petCollectionView.mas_centerY).offset(0);
-            make.right.offset(-12);
+            make.right.mas_equalTo(-12);
             make.width.height.offset(34);
         }];
         @weakify(self)
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
+            [self.petCollectionView clickRight];
         }];
-
         
         btn;
     });
@@ -139,7 +141,7 @@
     
     self.petNumLabel = ({
         UILabel *label = [[UILabel alloc] init];
-        label.text = @"1/12";
+        label.text = @"1/8";
         label.numberOfLines = 0;
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor colorWithHexString:@"#373737"];
@@ -281,5 +283,18 @@
     return height + TabBarHeight;
 }
 
+#pragma mark - MPEggCollectionView delegate
+- (void)getCurrenSectionIndex:(NSInteger)index {
+    if (index == 0) {
+        self.leftBtn.hidden = YES;
+    } else if (index == 8 - 1) {
+        self.rightBtn.hidden = YES;
+    } else {
+        self.leftBtn.hidden = NO;
+        self.rightBtn.hidden = NO;
+    }
+    
+    self.petNumLabel.text = [NSString stringWithFormat:@"%ld/8", index + 1];
+}
 
 @end

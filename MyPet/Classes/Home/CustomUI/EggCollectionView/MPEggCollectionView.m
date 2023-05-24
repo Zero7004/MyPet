@@ -25,7 +25,6 @@
         _itemSize = itemSize;
         [self setupUI];
     }
-    [self.collectionView reloadData];
     return self;
 }
 
@@ -39,6 +38,7 @@
         make.right.equalTo(self).offset(0);
         make.bottom.equalTo(self).offset(0);
         make.height.offset(self.itemSize.height);
+        make.width.offset(self.itemSize.width);
     }];
 }
 
@@ -53,6 +53,8 @@
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.pagingEnabled = YES;
+        _collectionView.alwaysBounceHorizontal = YES;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerNib:[UINib nibWithNibName:@"MPEggCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"MPEggCollectionViewCell"];
@@ -61,6 +63,31 @@
 }
 
 // MARK: - function
+- (void)clickLeft {
+    self.lastPage = self.lastPage - 1;
+    if (self.lastPage < 0) {
+        self.lastPage = 0;
+    } else {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.lastPage inSection:0];
+        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(getCurrenSectionIndex:)]) {
+            [self.delegate getCurrenSectionIndex:self.lastPage];
+        }
+    }
+}
+
+- (void)clickRight {
+    self.lastPage = self.lastPage + 1;
+    if (self.lastPage > 8) {
+        self.lastPage = 8 - 1;
+    } else {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.lastPage inSection:0];
+        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(getCurrenSectionIndex:)]) {
+            [self.delegate getCurrenSectionIndex:self.lastPage];
+        }
+    }
+}
 
 
 #pragma mark - UICollectionView delegate
@@ -77,11 +104,31 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MPEggCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPEggCollectionViewCell" forIndexPath:indexPath];
-    cell.imageName = indexPath.row % 2 == 0 ? @"egg" : @"eggIcon";
+    cell.imageName = @"egg";
 //    cell.model = self.dataArray[indexPath.row];
     
     return cell;
 }
+
+//手动滚动
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!(scrollView.isTracking || scrollView.isDecelerating || scrollView != self.collectionView)) {
+        return;
+    }
+
+    NSInteger currentPage = 0;
+    currentPage = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    currentPage = currentPage % 8;
+    
+    if (self.lastPage != currentPage) {
+        self.lastPage = currentPage;
+        NSLog(@"currentPage %ld", (long)currentPage);
+        if (self.delegate && [self.delegate respondsToSelector:@selector(getCurrenSectionIndex:)]) {
+            [self.delegate getCurrenSectionIndex:currentPage];
+        }
+    }
+}
+
 
 
 
