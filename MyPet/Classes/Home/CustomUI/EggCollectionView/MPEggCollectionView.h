@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPEggCollectionView : BaseView
 
+- (instancetype)initWithItemSize:(CGSize)itemSize;
+
 @end
 
 NS_ASSUME_NONNULL_END

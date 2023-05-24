@@ -19,6 +19,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+}
+
+- (void)setImageName:(NSString *)imageName {
+    _imageName = imageName;
+    [self.petImage setImage:[UIImage imageNamed:imageName]];
 }
 
 @end

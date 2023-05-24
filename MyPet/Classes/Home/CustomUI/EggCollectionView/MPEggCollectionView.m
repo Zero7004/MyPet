@@ -25,6 +25,7 @@
         _itemSize = itemSize;
         [self setupUI];
     }
+    [self.collectionView reloadData];
     return self;
 }
 
@@ -45,6 +46,7 @@
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.itemSize = self.itemSize;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.minimumLineSpacing = 0;
         layout.minimumInteritemSpacing = 0;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
@@ -60,6 +62,26 @@
 
 // MARK: - function
 
+
+#pragma mark - UICollectionView delegate
+//返回section个数
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+//每个section的item个数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+//    return self.dataArray.count;
+    return 8;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    MPEggCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPEggCollectionViewCell" forIndexPath:indexPath];
+    cell.imageName = indexPath.row % 2 == 0 ? @"egg" : @"eggIcon";
+//    cell.model = self.dataArray[indexPath.row];
+    
+    return cell;
+}
 
 
 
