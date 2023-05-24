@@ -7,8 +7,13 @@
 //
 
 #import "MPMyPetViewController.h"
+#import "CycleImageView.h"
 
 @interface MPMyPetViewController ()
+
+@property (nonatomic, strong) UIImageView *topBG;
+
+@property (nonatomic, strong) UIView *bottomView;
 
 @end
 
@@ -27,7 +32,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = UIColor.redColor;
+    [self initView];
+}
+
+- (void)initView {
+    self.view.backgroundColor = UIColor.whiteColor;
+    
+    self.topBG = ({
+        UIImageView *topBG = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgLV4"]];
+        [self.view addSubview:topBG];
+        [topBG mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.right.equalTo(self.view).offset(0);
+            make.height.offset(390);
+        }];
+
+        topBG;
+    });
+    
+    self.bottomView = ({
+        UIView *bottomView = [UIView new];
+        
+        bottomView;
+    });
 }
 
 

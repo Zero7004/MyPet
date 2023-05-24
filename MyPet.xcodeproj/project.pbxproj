@@ -57,6 +57,9 @@
 		34A62AD12A1C9CEB009BDF8B /* MPUserDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AD02A1C9CEB009BDF8B /* MPUserDefaultManager.m */; };
 		34A62AD82A1C9E8A009BDF8B /* MPFileStoreManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AD72A1C9E8A009BDF8B /* MPFileStoreManger.m */; };
 		34A62ADC2A1C9FAF009BDF8B /* MPGetPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62ADB2A1C9FAF009BDF8B /* MPGetPetViewController.m */; };
+		34A62AE02A1DB521009BDF8B /* MPEggCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62ADF2A1DB521009BDF8B /* MPEggCollectionView.m */; };
+		34A62AE42A1DB60C009BDF8B /* MPEggCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AE22A1DB60C009BDF8B /* MPEggCollectionViewCell.m */; };
+		34A62AE52A1DB60C009BDF8B /* MPEggCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A62AE32A1DB60C009BDF8B /* MPEggCollectionViewCell.xib */; };
 		34EFA7DA26E6FB6C00FC7698 /* YZAuthID.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */; };
 		34EFA95B26E88E9B00FC7698 /* CustomProvisionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA95A26E88E9B00FC7698 /* CustomProvisionsVC.m */; };
 		34EFA96526E89F2400FC7698 /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA96426E89F2400FC7698 /* CustomDatePickerView.m */; };
@@ -307,6 +310,11 @@
 		34A62AD92A1C9EC2009BDF8B /* MPFileStoreMangerFileName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFileStoreMangerFileName.h; sourceTree = "<group>"; };
 		34A62ADA2A1C9FAF009BDF8B /* MPGetPetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPGetPetViewController.h; sourceTree = "<group>"; };
 		34A62ADB2A1C9FAF009BDF8B /* MPGetPetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPGetPetViewController.m; sourceTree = "<group>"; };
+		34A62ADE2A1DB521009BDF8B /* MPEggCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPEggCollectionView.h; sourceTree = "<group>"; };
+		34A62ADF2A1DB521009BDF8B /* MPEggCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPEggCollectionView.m; sourceTree = "<group>"; };
+		34A62AE12A1DB60C009BDF8B /* MPEggCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPEggCollectionViewCell.h; sourceTree = "<group>"; };
+		34A62AE22A1DB60C009BDF8B /* MPEggCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPEggCollectionViewCell.m; sourceTree = "<group>"; };
+		34A62AE32A1DB60C009BDF8B /* MPEggCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPEggCollectionViewCell.xib; sourceTree = "<group>"; };
 		34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZAuthID.m; sourceTree = "<group>"; };
 		34EFA7D926E6FB6C00FC7698 /* YZAuthID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZAuthID.h; sourceTree = "<group>"; };
 		34EFA95926E88E9B00FC7698 /* CustomProvisionsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomProvisionsVC.h; sourceTree = "<group>"; };
@@ -811,6 +819,7 @@
 		34231D282887F3EC0047C794 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				34A62ADD2A1DB4F4009BDF8B /* EggCollectionView */,
 				34231D2C2887F4350047C794 /* FunctionCustomView */,
 			);
 			path = CustomUI;
@@ -938,6 +947,18 @@
 				34A62AD92A1C9EC2009BDF8B /* MPFileStoreMangerFileName.h */,
 			);
 			path = MPFileStore;
+			sourceTree = "<group>";
+		};
+		34A62ADD2A1DB4F4009BDF8B /* EggCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				34A62ADE2A1DB521009BDF8B /* MPEggCollectionView.h */,
+				34A62ADF2A1DB521009BDF8B /* MPEggCollectionView.m */,
+				34A62AE12A1DB60C009BDF8B /* MPEggCollectionViewCell.h */,
+				34A62AE22A1DB60C009BDF8B /* MPEggCollectionViewCell.m */,
+				34A62AE32A1DB60C009BDF8B /* MPEggCollectionViewCell.xib */,
+			);
+			path = EggCollectionView;
 			sourceTree = "<group>";
 		};
 		34EFA7D726E6FB6C00FC7698 /* YZAuthID */ = {
@@ -1788,6 +1809,7 @@
 				34831A54277997F3004BFC4D /* privacyPolicy.txt in Resources */,
 				3C2BFB1222A6F29C00515DE5 /* 2.png in Resources */,
 				3C6DB12D243ED07E00B2C2D7 /* JSResources.bundle in Resources */,
+				34A62AE52A1DB60C009BDF8B /* MPEggCollectionViewCell.xib in Resources */,
 				3C2BFB1122A6F29C00515DE5 /* 1.png in Resources */,
 				3C680A5B24D1912C0067A5D2 /* LaunchScreen.storyboard in Resources */,
 				3C95D9A72290462400D1E11D /* Assets.xcassets in Resources */,
@@ -1991,6 +2013,7 @@
 				3C95DA1A2290483600D1E11D /* BaseTabBarController.m in Sources */,
 				3C5CEE41229C23640078CE16 /* NSString+AttributedString.m in Sources */,
 				3C553BFD22C44A47007EDDE1 /* AreaModel.m in Sources */,
+				34A62AE02A1DB521009BDF8B /* MPEggCollectionView.m in Sources */,
 				3C6DB124243ED07E00B2C2D7 /* WKCallNativeMethodMessageHandler.m in Sources */,
 				34231D23288793720047C794 /* PopupModel.m in Sources */,
 				3C64D76022E06AE000B0A4EE /* EstateModel.m in Sources */,
@@ -2048,6 +2071,7 @@
 				34EFA96526E89F2400FC7698 /* CustomDatePickerView.m in Sources */,
 				34231D032886FFEC0047C794 /* BusinessViewController.m in Sources */,
 				3C95DA1B2290483600D1E11D /* BaseView.m in Sources */,
+				34A62AE42A1DB60C009BDF8B /* MPEggCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
