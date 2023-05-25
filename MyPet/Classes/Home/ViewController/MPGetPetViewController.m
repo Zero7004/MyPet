@@ -9,6 +9,7 @@
 #import "MPGetPetViewController.h"
 #import "UIButton+LXMImagePosition.h"
 #import "MPMyPetViewController.h"
+#import "BaseTabBarController.h"
 
 @interface MPGetPetViewController ()
 
@@ -81,8 +82,8 @@
         @weakify(self)
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            MPMyPetViewController *vc = [[MPMyPetViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
+            [MPWindow setRootViewController:[[BaseTabBarController alloc] init]];
+            [MPWindow makeKeyAndVisible];
         }];
         
         btn;

@@ -9,7 +9,7 @@
 #import "BaseTabBarController.h"
 #import "BaseNavigationController.h"
 #import "BaseViewController.h"
-#import "HomeViewController.h"
+#import "MPMyPetViewController.h"
 #import "BusinessViewController.h"
 #import "EarningsViewController.h"
 #import "MineViewController.h"
@@ -27,9 +27,22 @@
 
 @implementation BaseTabBarController
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    CGRect frame = self.tabBar.frame;
+    frame.size.height = frame.size.height + 15;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    self.tabBar.frame = frame;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.tabBar.frame.origin.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height + 15);
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tabbg"]];
+    bgView.frame = CGRectMake(0, 0, self.tabBar.frame.size.width, self.tabBar.frame.size.height + Bottom_SafeHeight);
+    [self.tabBar addSubview:bgView];
     
     [self setUpChildViewController];
 }
@@ -37,19 +50,21 @@
 // 设置控制器
 - (void)setUpChildViewController {
     
-    BaseNavigationController *homeNav = [self addChildViewController:[HomeViewController new] title:@"首页" image:@"home_dark" selImage:@"home_light"];
+    BaseNavigationController *homeNav = [self addChildViewController:[MPMyPetViewController new] title:@"FEED" image:@"tabbar_01_light" selImage:@"tabbar_01_light"];
         
-    BaseNavigationController *dynamicNav = [self addChildViewController:[BusinessViewController new] title:@"业务" image:@"alerts_dark" selImage:@"alerts_light"];
+    BaseNavigationController *dynamicNav = [self addChildViewController:[BusinessViewController new] title:@"Ebook" image:@"tabbar_02_dark" selImage:@"tabbar_02_dark"];
     
-    BaseNavigationController *tradingNav = [self addChildViewController:[[EarningsViewController alloc] init] title:@"收益" image:@"trading_dark" selImage:@"trading_light"];
+    BaseNavigationController *tradingNav = [self addChildViewController:[[EarningsViewController alloc] init] title:@"Explore" image:@"tabbar_03_dark" selImage:@"tabbar_03_dark"];
     
-    BaseNavigationController *mineNav = [self addChildViewController:[MineViewController new] title:@"我的" image:@"my_dark" selImage:@"my_light"];
+    BaseNavigationController *mineNav = [self addChildViewController:[MineViewController new] title:@"More" image:@"tabbar_04_dark" selImage:@"tabbar_04_dark"];
     
     self.viewControllers = @[homeNav,dynamicNav,tradingNav,mineNav];
-    [self.ItemNames addObjectsFromArray:@[@"首页", @"业务", @"收益", @"我的"]];
+    [self.ItemNames addObjectsFromArray:@[@"FEED", @"Ebook", @"More", @"我的"]];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color_TabBar_Color, NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:UIColor.blue01, NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color_Text_Color, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Regular" size:14.0f]}
+                                             forState:UIControlStateNormal];
 }
 
 

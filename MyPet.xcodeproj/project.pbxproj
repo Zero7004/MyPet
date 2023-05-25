@@ -60,6 +60,8 @@
 		34A62AE02A1DB521009BDF8B /* MPEggCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62ADF2A1DB521009BDF8B /* MPEggCollectionView.m */; };
 		34A62AE42A1DB60C009BDF8B /* MPEggCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AE22A1DB60C009BDF8B /* MPEggCollectionViewCell.m */; };
 		34A62AE52A1DB60C009BDF8B /* MPEggCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A62AE32A1DB60C009BDF8B /* MPEggCollectionViewCell.xib */; };
+		34A62AE72A1EF1D0009BDF8B /* launchBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A62AE62A1EF1CF009BDF8B /* launchBG.png */; };
+		34A62AEA2A1F47BF009BDF8B /* UIColor+AppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AE92A1F47BF009BDF8B /* UIColor+AppColor.m */; };
 		34EFA7DA26E6FB6C00FC7698 /* YZAuthID.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */; };
 		34EFA95B26E88E9B00FC7698 /* CustomProvisionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA95A26E88E9B00FC7698 /* CustomProvisionsVC.m */; };
 		34EFA96526E89F2400FC7698 /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA96426E89F2400FC7698 /* CustomDatePickerView.m */; };
@@ -315,6 +317,9 @@
 		34A62AE12A1DB60C009BDF8B /* MPEggCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPEggCollectionViewCell.h; sourceTree = "<group>"; };
 		34A62AE22A1DB60C009BDF8B /* MPEggCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPEggCollectionViewCell.m; sourceTree = "<group>"; };
 		34A62AE32A1DB60C009BDF8B /* MPEggCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPEggCollectionViewCell.xib; sourceTree = "<group>"; };
+		34A62AE62A1EF1CF009BDF8B /* launchBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchBG.png; sourceTree = "<group>"; };
+		34A62AE82A1F47BE009BDF8B /* UIColor+AppColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColor.h"; sourceTree = "<group>"; };
+		34A62AE92A1F47BF009BDF8B /* UIColor+AppColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColor.m"; sourceTree = "<group>"; };
 		34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZAuthID.m; sourceTree = "<group>"; };
 		34EFA7D926E6FB6C00FC7698 /* YZAuthID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZAuthID.h; sourceTree = "<group>"; };
 		34EFA95926E88E9B00FC7698 /* CustomProvisionsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomProvisionsVC.h; sourceTree = "<group>"; };
@@ -1367,6 +1372,7 @@
 				3C95D9A02290462300D1E11D /* ViewController.h */,
 				3C95D9A12290462300D1E11D /* ViewController.m */,
 				3C680A5924D1912C0067A5D2 /* LaunchScreen.storyboard */,
+				34A62AE62A1EF1CF009BDF8B /* launchBG.png */,
 				3C680A5824D1912B0067A5D2 /* Main.storyboard */,
 				3C95D9A62290462400D1E11D /* Assets.xcassets */,
 				3C95D9AB2290462400D1E11D /* Info.plist */,
@@ -1440,6 +1446,8 @@
 				FD69F36E26ABB8230056BE18 /* UIColor+hexColor.m */,
 				FD6FCD0626B03C040074B96E /* UIButton+LXMImagePosition.h */,
 				FD6FCD0726B03C040074B96E /* UIButton+LXMImagePosition.m */,
+				34A62AE82A1F47BE009BDF8B /* UIColor+AppColor.h */,
+				34A62AE92A1F47BF009BDF8B /* UIColor+AppColor.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1814,6 +1822,7 @@
 				3C680A5B24D1912C0067A5D2 /* LaunchScreen.storyboard in Resources */,
 				3C95D9A72290462400D1E11D /* Assets.xcassets in Resources */,
 				3C2BFB1322A6F29C00515DE5 /* 3.png in Resources */,
+				34A62AE72A1EF1D0009BDF8B /* launchBG.png in Resources */,
 				34EFAA4826EF242F00FC7698 /* CustomSelectViewCell.xib in Resources */,
 				341EF19227B53EC800A0F069 /* TZImagePickerController.bundle in Resources */,
 				3C9EA7F224505D570060E2CA /* ShareCollectionViewCell.xib in Resources */,
@@ -2041,6 +2050,7 @@
 				341EF19727B53EC800A0F069 /* UIView+TZLayout.m in Sources */,
 				341EF18C27B53EC800A0F069 /* TZVideoEditedPreviewController.m in Sources */,
 				3C14EDB922BB02D900F4E75D /* UserManager.m in Sources */,
+				34A62AEA2A1F47BF009BDF8B /* UIColor+AppColor.m in Sources */,
 				3C9EA7F124505D570060E2CA /* ShareCollectionViewCell.m in Sources */,
 				3C6DB120243ED07E00B2C2D7 /* JXBWKWebView.m in Sources */,
 				3C6DB126243ED07E00B2C2D7 /* WKWebView+ExternalNavigationDelegates.m in Sources */,

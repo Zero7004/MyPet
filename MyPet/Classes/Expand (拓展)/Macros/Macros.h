@@ -9,7 +9,7 @@
 #ifndef Macros_h
 #define Macros_h
 
-#define FSWindow [UIApplication sharedApplication].delegate.window
+#define MPWindow [UIApplication sharedApplication].delegate.window
 
 // 颜色
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
