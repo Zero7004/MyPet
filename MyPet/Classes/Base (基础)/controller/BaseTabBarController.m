@@ -39,10 +39,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.tabBar.frame.origin.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height + 15);
-    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tabbg"]];
-    bgView.frame = CGRectMake(0, 0, self.tabBar.frame.size.width, self.tabBar.frame.size.height + Bottom_SafeHeight);
-    [self.tabBar addSubview:bgView];
+    self.tabBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tabbg"]];
     
     [self setUpChildViewController];
 }
@@ -82,7 +79,7 @@
     childVC.tabBarItem.title = title;
     childVC.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVC.tabBarItem.selectedImage = [[UIImage imageNamed:selImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    childVC.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -2);
+//    childVC.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -2);
     
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:childVC];
     return nav;
