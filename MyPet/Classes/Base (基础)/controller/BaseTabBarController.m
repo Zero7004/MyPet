@@ -47,16 +47,16 @@
 // 设置控制器
 - (void)setUpChildViewController {
     
-    BaseNavigationController *homeNav = [self addChildViewController:[MPMyPetViewController new] title:@"FEED" image:@"tabbar_01_light" selImage:@"tabbar_01_light"];
+    BaseNavigationController *homeNav = [self addChildViewController:[MPMyPetViewController new] title:@"FEED" image:@"tabbar_01_dark" selImage:@"tabbar_01_light"];
         
-    BaseNavigationController *dynamicNav = [self addChildViewController:[BusinessViewController new] title:@"Ebook" image:@"tabbar_02_dark" selImage:@"tabbar_02_dark"];
+    BaseNavigationController *dynamicNav = [self addChildViewController:[BusinessViewController new] title:@"Ebook" image:@"tabbar_02_dark" selImage:@"tabbar_02_light"];
     
-    BaseNavigationController *tradingNav = [self addChildViewController:[[EarningsViewController alloc] init] title:@"Explore" image:@"tabbar_03_dark" selImage:@"tabbar_03_dark"];
+    BaseNavigationController *tradingNav = [self addChildViewController:[[EarningsViewController alloc] init] title:@"Explore" image:@"tabbar_03_dark" selImage:@"tabbar_03_light"];
     
-    BaseNavigationController *mineNav = [self addChildViewController:[MineViewController new] title:@"More" image:@"tabbar_04_dark" selImage:@"tabbar_04_dark"];
+    BaseNavigationController *mineNav = [self addChildViewController:[MineViewController new] title:@"More" image:@"tabbar_04_dark" selImage:@"tabbar_04_light"];
     
     self.viewControllers = @[homeNav,dynamicNav,tradingNav,mineNav];
-    [self.ItemNames addObjectsFromArray:@[@"FEED", @"Ebook", @"More", @"我的"]];
+    [self.ItemNames addObjectsFromArray:@[@"FEED", @"Ebook", @"Explore", @"More"]];
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:UIColor.blue01, NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color_Text_Color, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
@@ -79,7 +79,7 @@
     childVC.tabBarItem.title = title;
     childVC.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVC.tabBarItem.selectedImage = [[UIImage imageNamed:selImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    childVC.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -2);
+    childVC.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -4);
     
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:childVC];
     return nav;
