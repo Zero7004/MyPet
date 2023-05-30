@@ -1,0 +1,18 @@
+/* 
+  InfoPlist.strings
+  MyPet
+
+  Created by long on 2023/5/30.
+  Copyright © 2023 王健龙. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "MyPet";
+"NSLocationWhenInUseUsageDescription" = "我们将存取您的位置资料以找寻附近楼盘。";
+"NSCameraUsageDescription" = "我们将存取您的相机以让您拍摄相片。";
+"NSPhotoLibraryUsageDescription" = "我们将存取您的图片以让您储存图片至您的心水楼盘及上传所需文件。";
+"NSPhotoLibraryAddUsageDescription" = "我们将存取您的图片以让您储存图片至您的心水楼盘及上传所需文件。";
+"NSCalendarsUsageDescription" = "我们将透过日历同步置业活动。";
+"NSMicrophoneUsageDescription" = "请允许我们存取您的权限以提供语音搜寻服务。";
+"NSContactsUsageDescription" = "请允许我们存取您的权限。通讯录资料只用作处理是次小额转账，不会储存或转移予第三者。";
+"NSUserTrackingUsageDescription" = "有关数据可能会用作改善流动应用程式运作、统计分析及推广用途。";
+

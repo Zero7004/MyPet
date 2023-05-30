@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)removeValueForKey:(NSString *)key;
 
++ (void)setLangWithValue:(NSString *)value;
+
++ (NSString *)getLang;
 
 @end
 

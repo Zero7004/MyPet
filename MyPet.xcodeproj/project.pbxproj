@@ -62,6 +62,9 @@
 		34A62AE52A1DB60C009BDF8B /* MPEggCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A62AE32A1DB60C009BDF8B /* MPEggCollectionViewCell.xib */; };
 		34A62AE72A1EF1D0009BDF8B /* launchBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A62AE62A1EF1CF009BDF8B /* launchBG.png */; };
 		34A62AEA2A1F47BF009BDF8B /* UIColor+AppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AE92A1F47BF009BDF8B /* UIColor+AppColor.m */; };
+		34A62AEC2A258B75009BDF8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34A62AEB2A258B74009BDF8B /* Localizable.strings */; };
+		34A62AF32A258C4D009BDF8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34A62AF52A258C4D009BDF8B /* InfoPlist.strings */; };
+		34A62AFA2A2591CF009BDF8B /* MPLangManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A62AF92A2591CF009BDF8B /* MPLangManager.m */; };
 		34EFA7DA26E6FB6C00FC7698 /* YZAuthID.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */; };
 		34EFA95B26E88E9B00FC7698 /* CustomProvisionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA95A26E88E9B00FC7698 /* CustomProvisionsVC.m */; };
 		34EFA96526E89F2400FC7698 /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EFA96426E89F2400FC7698 /* CustomDatePickerView.m */; };
@@ -320,6 +323,11 @@
 		34A62AE62A1EF1CF009BDF8B /* launchBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchBG.png; sourceTree = "<group>"; };
 		34A62AE82A1F47BE009BDF8B /* UIColor+AppColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColor.h"; sourceTree = "<group>"; };
 		34A62AE92A1F47BF009BDF8B /* UIColor+AppColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColor.m"; sourceTree = "<group>"; };
+		34A62AEB2A258B74009BDF8B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		34A62AF42A258C4D009BDF8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		34A62AF62A258C54009BDF8B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		34A62AF82A2591CF009BDF8B /* MPLangManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPLangManager.h; sourceTree = "<group>"; };
+		34A62AF92A2591CF009BDF8B /* MPLangManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPLangManager.m; sourceTree = "<group>"; };
 		34EFA7D826E6FB6C00FC7698 /* YZAuthID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZAuthID.m; sourceTree = "<group>"; };
 		34EFA7D926E6FB6C00FC7698 /* YZAuthID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZAuthID.h; sourceTree = "<group>"; };
 		34EFA95926E88E9B00FC7698 /* CustomProvisionsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomProvisionsVC.h; sourceTree = "<group>"; };
@@ -928,6 +936,7 @@
 		34A62ACB2A1C9B01009BDF8B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				34A62AF72A2591A5009BDF8B /* MPLangManager */,
 				34A62AD52A1C9E45009BDF8B /* MPFileStore */,
 				34A62AD42A1C9E36009BDF8B /* MPUserDefaultManager */,
 			);
@@ -964,6 +973,15 @@
 				34A62AE32A1DB60C009BDF8B /* MPEggCollectionViewCell.xib */,
 			);
 			path = EggCollectionView;
+			sourceTree = "<group>";
+		};
+		34A62AF72A2591A5009BDF8B /* MPLangManager */ = {
+			isa = PBXGroup;
+			children = (
+				34A62AF82A2591CF009BDF8B /* MPLangManager.h */,
+				34A62AF92A2591CF009BDF8B /* MPLangManager.m */,
+			);
+			path = MPLangManager;
 			sourceTree = "<group>";
 		};
 		34EFA7D726E6FB6C00FC7698 /* YZAuthID */ = {
@@ -1377,6 +1395,8 @@
 				3C95D9A62290462400D1E11D /* Assets.xcassets */,
 				3C95D9AB2290462400D1E11D /* Info.plist */,
 				3C95D9AC2290462400D1E11D /* main.m */,
+				34A62AEB2A258B74009BDF8B /* Localizable.strings */,
+				34A62AF52A258C4D009BDF8B /* InfoPlist.strings */,
 			);
 			path = MyPet;
 			sourceTree = "<group>";
@@ -1824,9 +1844,11 @@
 				3C2BFB1322A6F29C00515DE5 /* 3.png in Resources */,
 				34A62AE72A1EF1D0009BDF8B /* launchBG.png in Resources */,
 				34EFAA4826EF242F00FC7698 /* CustomSelectViewCell.xib in Resources */,
+				34A62AF32A258C4D009BDF8B /* InfoPlist.strings in Resources */,
 				341EF19227B53EC800A0F069 /* TZImagePickerController.bundle in Resources */,
 				3C9EA7F224505D570060E2CA /* ShareCollectionViewCell.xib in Resources */,
 				3C680A5A24D1912C0067A5D2 /* Main.storyboard in Resources */,
+				34A62AEC2A258B75009BDF8B /* Localizable.strings in Resources */,
 				FD73F0D626B83B4800090888 /* CustomViewTableSelectAlertViewCell.xib in Resources */,
 				3C2BFB0C22A6F1F600515DE5 /* CycleImageViewCell.xib in Resources */,
 				34231D422888E9C40047C794 /* SelectLabelCollectionViewCell.xib in Resources */,
@@ -2045,6 +2067,7 @@
 				341EF18E27B53EC800A0F069 /* TZVideoPlayerController.m in Sources */,
 				34EFAA4726EF242F00FC7698 /* CustomSelectViewCell.m in Sources */,
 				3C553C0022C44A77007EDDE1 /* AreaPickerView.m in Sources */,
+				34A62AFA2A2591CF009BDF8B /* MPLangManager.m in Sources */,
 				34231D412888E9C40047C794 /* SelectLabelCollectionViewCell.m in Sources */,
 				34231D16288792840047C794 /* SearchView.m in Sources */,
 				341EF19727B53EC800A0F069 /* UIView+TZLayout.m in Sources */,
@@ -2086,6 +2109,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		34A62AF52A258C4D009BDF8B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34A62AF42A258C4D009BDF8B /* en */,
+				34A62AF62A258C54009BDF8B /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3C95D9AE2290462400D1E11D /* Debug */ = {

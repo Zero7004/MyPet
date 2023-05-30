@@ -78,6 +78,13 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 }\
 (isPhoneX);})
 
+/** Localizable File String **/
+#define MPLocalStr(str) NSLocalizedString(([NSString stringWithFormat:@"%@_%@",str,[[MPLangManager shareInstance] getCurLang]]),nil)
+#define MPLocalStrAddKey(str, key) NSLocalizedString(([NSString stringWithFormat:@"%@_%@",str,key]),nil)
+#define LOCALSTR_ARRAY(str) [NSLocalizedString(([NSString stringWithFormat:@"%@",str]),nil) componentsSeparatedByString:@"|"]
+#define LOCALSTR_ARRAY_WITH_LANG(str) [NSLocalizedString(([NSString stringWithFormat:@"%@_%@",str,[[MPLangManager shareInstance] getCurLang]]),nil) componentsSeparatedByString:@"|"]
+
+
 // View 圆角
 #define ViewRadius(View, Radius)\
 \

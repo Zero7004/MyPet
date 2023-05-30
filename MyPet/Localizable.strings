@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  MyPet
+
+  Created by long on 2023/5/30.
+  Copyright © 2023 王健龙. All rights reserved.
+*/
+
+/** common **/
+"App_name_en" = "MyPet";
+"App_name_zh_CN" = "我的宠物";

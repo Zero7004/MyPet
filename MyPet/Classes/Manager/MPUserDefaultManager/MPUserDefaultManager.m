@@ -49,4 +49,15 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+# pragma mark - lang
+
++ (void)setLangWithValue:(NSString *)value {
+    [self setValue:value forKey:MPUserDefaultManager_Lang];
+}
+
++ (NSString *)getLang {
+    return [self getValueForKey:MPUserDefaultManager_Lang];
+}
+
+
 @end

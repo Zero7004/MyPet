@@ -13,4 +13,8 @@
 static NSString *const MPMyPetKey = @"MPMyPetKey";
 
 
+# pragma mark - lang
+static NSString * const MPUserDefaultManager_Lang = @"MPUserDefaultManager_Lang";
+
+
 #endif /* MPUserDefaultManagerKeyValue_h */
