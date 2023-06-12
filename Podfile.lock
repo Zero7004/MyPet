@@ -41,10 +41,20 @@ PODS:
   - MJExtension (3.2.4)
   - MJRefresh (3.5.0)
   - OpenShare (0.0.1)
+  - Protobuf (3.21.12)
   - ReactiveObjC (3.1.1)
   - SDWebImage (5.9.0):
     - SDWebImage/Core (= 5.9.0)
   - SDWebImage/Core (5.9.0)
+  - SSZipArchive (2.4.3)
+  - SVGAPlayer (2.5.7):
+    - SVGAPlayer/Core (= 2.5.7)
+    - SVGAPlayer/ProtoFiles (= 2.5.7)
+  - SVGAPlayer/Core (2.5.7):
+    - SSZipArchive (>= 1.8.1)
+    - SVGAPlayer/ProtoFiles
+  - SVGAPlayer/ProtoFiles (2.5.7):
+    - Protobuf (~> 3.4)
   - SVProgressHUD (2.2.5)
   - UMAPM (1.1.1)
   - UMCCommon (7.2.5):
@@ -76,6 +86,7 @@ DEPENDENCIES:
   - OpenShare
   - ReactiveObjC
   - SDWebImage
+  - SVGAPlayer
   - SVProgressHUD
   - UMCCommon
   - UMCShare/Social/ReducedQQ
@@ -96,8 +107,11 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - OpenShare
+    - Protobuf
     - ReactiveObjC
     - SDWebImage
+    - SSZipArchive
+    - SVGAPlayer
     - SVProgressHUD
     - UMAPM
     - UMCCommon
@@ -118,8 +132,11 @@ SPEC CHECKSUMS:
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
+  Protobuf: 120350fc38646e2dedc26f49ecba778184ea1de2
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
+  SVGAPlayer: 318b85a78b61292d6ae9dfcd651f3f0d1cdadd86
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UMAPM: d0623e0b3ca8b1a1df855e0bddb91b5c002d097d
   UMCCommon: f7480d316381612f90cdde3a3c0f39a7e2c0a788
@@ -127,6 +144,6 @@ SPEC CHECKSUMS:
   UMDevice: 28d21a568c8e8322e5a03bbd53b138d0c098d3b3
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
 
-PODFILE CHECKSUM: 56773aa5e3d743904b095d81c7464fa57ce9d743
+PODFILE CHECKSUM: 67a30204cdc36f7a01b340d4389274f2fbfd4de8
 
 COCOAPODS: 1.10.1

@@ -26,5 +26,9 @@ pod 'UMCShare/Social/ReducedQQ'
 pod 'UMCShare/Social/ReducedSina'
 pod 'Bugly'
 pod 'JSONModel'
+#pod 'SVGKit'
+#pod 'CocoaLumberjack'
+pod 'SVGAPlayer'
+
 end
  
