@@ -46,124 +46,123 @@
 }
 
 - (void)initView {
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = UIColor.redColor;
     
-    self.topBG = ({
-        UIImageView *topBG = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgLV4"]];
-        [self.view addSubview:topBG];
-        [topBG mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.right.equalTo(self.view).offset(0);
-        }];
-
-        topBG;
-    });
+//    self.topBG = ({
+//        UIImageView *topBG = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgLV4"]];
+//        [self.view addSubview:topBG];
+//        [topBG mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.left.right.equalTo(self.view).offset(0);
+//        }];
+//
+//        topBG;
+//    });
     
     self.petCollectionView = ({
-        MPEggCollectionView *view = [[MPEggCollectionView alloc] initWithItemSize:CGSizeMake(180, 119)];
+        MPEggCollectionView *view = [[MPEggCollectionView alloc] initWithItemSize:CGSizeMake(SCREEN_WIDTH, 371)];
         view.delegate = self;
         [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.view.mas_centerX).offset(0);
-            make.width.offset(180);
-            make.height.offset(119);
-            make.top.equalTo(self.view).offset([self getStatusHeight] + 19 + 24);
+            make.height.offset(371);
+            make.top.equalTo(self.view).offset(0);
+            make.left.right.equalTo(self.view).offset(0);
         }];
         
         view;
     });
     
-    self.leftBtn = ({
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setImage:[UIImage imageNamed:@"icon_left"] forState:UIControlStateNormal];
-        btn.hidden = self.petCollectionView.lastPage == 0;
-        [self.view addSubview:btn];
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.petCollectionView.mas_centerY).offset(0);
-            make.left.mas_equalTo(12);
-            make.width.height.offset(34);
-        }];
-        @weakify(self)
-        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self)
-            [self.petCollectionView clickLeft];
-        }];
-
-        btn;
-    });
-    
-    self.rightBtn = ({
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setImage:[UIImage imageNamed:@"icon_right"] forState:UIControlStateNormal];
-        btn.hidden = self.petCollectionView.lastPage == 8 - 1;
-        [self.view addSubview:btn];
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.petCollectionView.mas_centerY).offset(0);
-            make.right.mas_equalTo(-12);
-            make.width.height.offset(34);
-        }];
-        @weakify(self)
-        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self)
-            [self.petCollectionView clickRight];
-        }];
-        
-        btn;
-    });
-    
-    UIView *petNameBG = [UIView new];
-    petNameBG.backgroundColor = UIColor.whiteColor;
-    petNameBG.layer.cornerRadius = 11;
-    petNameBG.layer.masksToBounds = YES;
-    petNameBG.alpha = 0.7;
-    [self.topBG addSubview:petNameBG];
-    [petNameBG mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.petCollectionView.mas_bottom).offset(4);
-        make.centerX.equalTo(self.topBG.mas_centerX).offset(0);
-        make.width.offset(140);
-        make.height.offset(22);
-    }];
-    self.petNameLabel = ({
-        UILabel *label = [[UILabel alloc] init];
-        label.text = @"Random Egg…";
-        label.numberOfLines = 0;
-        label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor colorWithHexString:@"#373737"];
-        label.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:12.0f];
-        [petNameBG addSubview:label];
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(petNameBG.mas_centerX).offset(0);
-            make.width.offset(140);
-            make.height.offset(22);
-        }];
-
-        label;
-    });
-    
-    self.petNumLabel = ({
-        UILabel *label = [[UILabel alloc] init];
-        label.text = @"1/8";
-        label.numberOfLines = 0;
-        label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor colorWithHexString:@"#373737"];
-        label.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:14.0f];
-        [self.topBG addSubview:label];
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(petNameBG.mas_bottom).offset(4);
-            make.centerX.equalTo(self.topBG.mas_centerX).offset(0);
-            make.width.offset(140);
-            make.height.offset(22);
-        }];
-
-        label;
-    });
-
-    UIView *hatchView = [self getHatchTimeView];
-    [self.topBG addSubview:hatchView];
-    [hatchView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.petNumLabel.mas_bottom).offset(14);
-        make.centerX.equalTo(self.topBG.mas_centerX).offset(0);
-        make.bottom.equalTo(self.topBG.mas_bottom).offset(-16-19);
-    }];
+//    self.leftBtn = ({
+//        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [btn setImage:[UIImage imageNamed:@"icon_left"] forState:UIControlStateNormal];
+//        btn.hidden = self.petCollectionView.lastPage == 0;
+//        [self.view addSubview:btn];
+//        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerY.equalTo(self.petCollectionView.mas_centerY).offset(0);
+//            make.left.mas_equalTo(12);
+//            make.width.height.offset(34);
+//        }];
+//        @weakify(self)
+//        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+//            @strongify(self)
+//            [self.petCollectionView clickLeft];
+//        }];
+//
+//        btn;
+//    });
+//
+//    self.rightBtn = ({
+//        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [btn setImage:[UIImage imageNamed:@"icon_right"] forState:UIControlStateNormal];
+//        btn.hidden = self.petCollectionView.lastPage == 8 - 1;
+//        [self.view addSubview:btn];
+//        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerY.equalTo(self.petCollectionView.mas_centerY).offset(0);
+//            make.right.mas_equalTo(-12);
+//            make.width.height.offset(34);
+//        }];
+//        @weakify(self)
+//        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+//            @strongify(self)
+//            [self.petCollectionView clickRight];
+//        }];
+//
+//        btn;
+//    });
+//
+//    UIView *petNameBG = [UIView new];
+//    petNameBG.backgroundColor = UIColor.whiteColor;
+//    petNameBG.layer.cornerRadius = 11;
+//    petNameBG.layer.masksToBounds = YES;
+//    petNameBG.alpha = 0.7;
+//    [self.topBG addSubview:petNameBG];
+//    [petNameBG mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.petCollectionView.mas_bottom).offset(4);
+//        make.centerX.equalTo(self.topBG.mas_centerX).offset(0);
+//        make.width.offset(140);
+//        make.height.offset(22);
+//    }];
+//    self.petNameLabel = ({
+//        UILabel *label = [[UILabel alloc] init];
+//        label.text = @"Random Egg…";
+//        label.numberOfLines = 0;
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.textColor = [UIColor colorWithHexString:@"#373737"];
+//        label.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:12.0f];
+//        [petNameBG addSubview:label];
+//        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerX.equalTo(petNameBG.mas_centerX).offset(0);
+//            make.width.offset(140);
+//            make.height.offset(22);
+//        }];
+//
+//        label;
+//    });
+//
+//    self.petNumLabel = ({
+//        UILabel *label = [[UILabel alloc] init];
+//        label.text = @"1/8";
+//        label.numberOfLines = 0;
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.textColor = [UIColor colorWithHexString:@"#373737"];
+//        label.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:14.0f];
+//        [self.topBG addSubview:label];
+//        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(petNameBG.mas_bottom).offset(4);
+//            make.centerX.equalTo(self.topBG.mas_centerX).offset(0);
+//            make.width.offset(140);
+//            make.height.offset(22);
+//        }];
+//
+//        label;
+//    });
+//
+//    UIView *hatchView = [self getHatchTimeView];
+//    [self.topBG addSubview:hatchView];
+//    [hatchView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.petNumLabel.mas_bottom).offset(14);
+//        make.centerX.equalTo(self.topBG.mas_centerX).offset(0);
+//        make.bottom.equalTo(self.topBG.mas_bottom).offset(-16-19);
+//    }];
 
     
     self.bottomView = ({
@@ -174,7 +173,7 @@
         [self.view addSubview:bottomView];
         [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.left.right.equalTo(self.view).offset(0);
-            make.top.equalTo(self.topBG.mas_bottom).offset(-19);
+            make.top.equalTo(self.petCollectionView.mas_bottom).offset(0);
         }];
         
         bottomView;
@@ -280,7 +279,7 @@
     }else {
         height = [[UIApplication sharedApplication] statusBarFrame].size.height;
     }
-    return height + TabBarHeight;
+    return height;
 }
 
 #pragma mark - MPEggCollectionView delegate
