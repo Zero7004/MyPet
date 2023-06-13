@@ -183,6 +183,7 @@
 		FD7F824826C16395008C1A52 /* CustomPickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7F824726C16395008C1A52 /* CustomPickerViewModel.m */; };
 		FD8B19722A263C9C00D69C6B /* MPFuncCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B19712A263C9C00D69C6B /* MPFuncCollectionView.m */; };
 		FD8B19752A26407000D69C6B /* MPFuncCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B19742A26407000D69C6B /* MPFuncCollectionViewCell.m */; };
+		FD9F0F0A2A37849700618F29 /* cat.svga in Resources */ = {isa = PBXBuildFile; fileRef = FD9F0F092A37849700618F29 /* cat.svga */; };
 		FDB84FC42A1D1B3400B52006 /* MPMyPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB84FC32A1D1B3400B52006 /* MPMyPetViewController.m */; };
 		FDECF0FB26AF0E2600DD67B2 /* TYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECF0F726AF0E2500DD67B2 /* TYPageControl.m */; };
 		FDECF0FC26AF0E2600DD67B2 /* TYCyclePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDECF0F826AF0E2500DD67B2 /* TYCyclePagerView.m */; };
@@ -559,6 +560,7 @@
 		FD8B19712A263C9C00D69C6B /* MPFuncCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPFuncCollectionView.m; sourceTree = "<group>"; };
 		FD8B19732A26407000D69C6B /* MPFuncCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFuncCollectionViewCell.h; sourceTree = "<group>"; };
 		FD8B19742A26407000D69C6B /* MPFuncCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPFuncCollectionViewCell.m; sourceTree = "<group>"; };
+		FD9F0F092A37849700618F29 /* cat.svga */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.svga; sourceTree = "<group>"; };
 		FDB84FC22A1D1B3400B52006 /* MPMyPetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMyPetViewController.h; sourceTree = "<group>"; };
 		FDB84FC32A1D1B3400B52006 /* MPMyPetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMyPetViewController.m; sourceTree = "<group>"; };
 		FDECF0F526AF0E2500DD67B2 /* TYCyclePagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerView.h; sourceTree = "<group>"; };
@@ -1398,6 +1400,7 @@
 				3C95D9A12290462300D1E11D /* ViewController.m */,
 				3C680A5924D1912C0067A5D2 /* LaunchScreen.storyboard */,
 				34A62AE62A1EF1CF009BDF8B /* launchBG.png */,
+				FD9F0F092A37849700618F29 /* cat.svga */,
 				3C680A5824D1912B0067A5D2 /* Main.storyboard */,
 				3C95D9A62290462400D1E11D /* Assets.xcassets */,
 				3C95D9AB2290462400D1E11D /* Info.plist */,
@@ -1869,6 +1872,7 @@
 				34A62AEC2A258B75009BDF8B /* Localizable.strings in Resources */,
 				FD73F0D626B83B4800090888 /* CustomViewTableSelectAlertViewCell.xib in Resources */,
 				3C2BFB0C22A6F1F600515DE5 /* CycleImageViewCell.xib in Resources */,
+				FD9F0F0A2A37849700618F29 /* cat.svga in Resources */,
 				34231D422888E9C40047C794 /* SelectLabelCollectionViewCell.xib in Resources */,
 				34231D342887F6E90047C794 /* FunctionCustomViewCell.xib in Resources */,
 			);
