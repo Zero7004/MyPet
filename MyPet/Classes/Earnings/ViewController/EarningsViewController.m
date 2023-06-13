@@ -15,6 +15,9 @@
 @property (nonatomic, assign) BOOL beginAni;
 @property (nonatomic, strong) SVGAPlayer *svga;
 
+@property (nonatomic, strong) NSMutableArray *petArray;
+@property (nonatomic, strong) NSMutableArray *petItemArray;
+
 @end
 
 @implementation EarningsViewController
@@ -29,7 +32,7 @@
     [super viewWillAppear:YES];
     NSLog(@"viewWillAppear");
     self.beginAni = YES;
-    [self beginAnimation];
+//    [self beginAnimation];
 }
 
 
@@ -37,8 +40,32 @@
     [super viewDidLoad];
     
     self.beginAni = YES;
-    [self.view addSubview:self.myView];
-    [self.myView addSubview:self.svga];
+    
+    UIImageView *bgImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgWord"]];
+    [self.view addSubview:bgImg];
+    [bgImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.equalTo(self.view).offset(0);
+    }];
+    
+//    [self.view addSubview:self.myView];
+//    [self.view addSubview:self.svga];
+    
+    for (int i = 0; i < 20; i++) {
+        [self.petArray addObject:@"cat"];
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    [self.petArray enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL * _Nonnull stop) {
+        SVGAPlayer *svga = [weakSelf getSVGAPlayerWithIndex:idx];
+        [self.view addSubview:svga];
+        [weakSelf.petItemArray addObject:svga];
+        [weakSelf setAnimationWith:idx];
+    }];
+    
+    [self.petItemArray enumerateObjectsUsingBlock:^(SVGAPlayer *svga, NSUInteger idx, BOOL * _Nonnull stop) {
+        [weakSelf beginAnimationWith:svga];
+    }];
+
 
 //    [self.myView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.centerX.equalTo(self.view);
@@ -90,10 +117,9 @@
     _svga = [[SVGAPlayer alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     _svga.contentMode = UIViewContentModeScaleAspectFill;
     SVGAParser *parser = [[SVGAParser alloc] init];
-    @weakify(self)
     __weak typeof(self) weakSelf = self;
-    [parser parseWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"cat.svga" ofType:nil]] completionBlock:^(SVGAVideoEntity * _Nullable videoItem) {
-        @strongify(self)
+    [parser parseWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"cat" ofType:@"svga"]] completionBlock:^(SVGAVideoEntity * _Nullable videoItem) {
+        
         if (videoItem) {
             weakSelf.svga.videoItem = videoItem;
             [weakSelf.svga startAnimation];
@@ -109,16 +135,49 @@
     return _svga;
 }
 
-- (void)beginAnimation {
+- (SVGAPlayer *)getSVGAPlayerWithIndex:(NSInteger)index {
+    CGPoint point = [self getRandomPoint];
+    SVGAPlayer *svga = [[SVGAPlayer alloc] initWithFrame:CGRectMake(point.x, point.y, 100, 100)];
+    svga.contentMode = UIViewContentModeScaleAspectFill;
+    svga.userInteractionEnabled = YES;
+    svga.loops = INT16_MAX;
+    svga.clearsAfterStop = YES;
+    svga.tag = 10000 + index;
+    return svga;
+}
+
+- (CGPoint)getRandomPoint {
+    int x = rand() % lround(SCREEN_WIDTH - 20);
+    int y = rand() % lround(SCREEN_HEIGHT - 200);
+    return CGPointMake(x, y);
+}
+
+- (void)setAnimationWith:(NSInteger)index {
+    SVGAParser *parser = [[SVGAParser alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [parser parseWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:self.petArray[index] ofType:@"svga"]] completionBlock:^(SVGAVideoEntity * _Nullable videoItem) {
+        
+        if (videoItem) {
+            SVGAPlayer *svga = weakSelf.petItemArray[index];
+            svga.videoItem = videoItem;
+            [svga startAnimation];
+        }
+        
+    } failureBlock:^(NSError * _Nullable error) {
+        NSLog(@"加载失败 %@", error);
+    }];
+}
+
+- (void)beginAnimationWith:(SVGAPlayer *)svga {
     if (!self.beginAni) {
         return;
     }
-    int x1 = self.myView.frame.origin.x;
-    int y1 = self.myView.frame.origin.y;
+    int x1 = svga.frame.origin.x;
+    int y1 = svga.frame.origin.y;
     NSLog(@"坐标1 %d %d", x1, y1);
 
-    int x2 = rand() % lround(SCREEN_WIDTH);
-    int y2 = rand() % lround(SCREEN_HEIGHT);
+    int x2 = rand() % lround(SCREEN_WIDTH - 20);
+    int y2 = rand() % lround(SCREEN_HEIGHT - 200);
     NSLog(@"坐标2 %d %d", x2, y2);
     
     //速度暂定为 v = 2
@@ -129,8 +188,68 @@
     double t = s / v;
     NSLog(@"距离 %f 时间 %f", s, t);
 
-    [UIView animateWithDuration:t animations:^{
-        self.myView.frame = CGRectMake(x2, y2, 100, 100);
+//    [UIView animateWithDuration:t animations:^{
+//        self.myView.frame = CGRectMake(x2, y2, 100, 100);
+//    } completion:^(BOOL finished) {
+//        [self beginAnimation];
+//        NSLog(@"开始执行平移动画");
+//    }];
+    
+    
+    [UIView animateKeyframesWithDuration:t delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+        svga.frame = CGRectMake(x2, y2, 100, 100);
+    } completion:^(BOOL finished) {
+        [self beginAnimationWith:svga];
+        NSLog(@"开始执行平移动画");
+    }];
+}
+
+
+- (NSMutableArray *)petArray {
+    if (!_petArray) {
+        _petArray = [NSMutableArray new];
+    }
+    return _petArray;
+}
+
+- (NSMutableArray *)petItemArray {
+    if (!_petItemArray) {
+        _petItemArray = [NSMutableArray new];
+    }
+    return _petItemArray;
+}
+
+
+- (void)beginAnimation {
+    if (!self.beginAni) {
+        return;
+    }
+    int x1 = self.svga.frame.origin.x;
+    int y1 = self.svga.frame.origin.y;
+    NSLog(@"坐标1 %d %d", x1, y1);
+
+    int x2 = rand() % lround(SCREEN_WIDTH);
+    int y2 = rand() % lround(SCREEN_HEIGHT - 200);
+    NSLog(@"坐标2 %d %d", x2, y2);
+    
+    //速度暂定为 v = 2
+    double v = 80;
+    //距离 s
+    double s = sqrt(pow((x1 - x2), 2) + pow((y1 - y2), 2));
+    //时间 t
+    double t = s / v;
+    NSLog(@"距离 %f 时间 %f", s, t);
+
+//    [UIView animateWithDuration:t animations:^{
+//        self.myView.frame = CGRectMake(x2, y2, 100, 100);
+//    } completion:^(BOOL finished) {
+//        [self beginAnimation];
+//        NSLog(@"开始执行平移动画");
+//    }];
+    
+    
+    [UIView animateKeyframesWithDuration:t delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+        self.svga.frame = CGRectMake(x2, y2, 100, 100);
     } completion:^(BOOL finished) {
         [self beginAnimation];
         NSLog(@"开始执行平移动画");
